@@ -1,0 +1,36 @@
+{
+  "name": "Agent Notes",
+  "author": {
+    "name": "Assist Apps",
+    "email": "hello@assistapps.co"
+  },
+  "defaultLocale": "en",
+  "private": false,
+  "location": {
+    "support": {
+      "top_bar": {
+        "url": "http://localhost:3000/top_bar",
+        "size": {
+          "height": "60vh",
+          "width": "400px"
+        }
+      },
+      "ticket_sidebar": {
+        "url": "http://localhost:3000/ticket_sidebar",
+        "size": {
+          "height": "70vh",
+          "width": "100%"
+        }
+      },
+      "new_ticket_sidebar": {
+        "url": "http://localhost:3000/ticket_sidebar",
+        "size": {
+          "height": "70vh",
+          "width": "100%"
+        }
+      }
+    }
+  },
+  "version": "1.0.2",
+  "frameworkVersion": "2.0"
+}
