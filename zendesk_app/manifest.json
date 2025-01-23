@@ -10,21 +10,21 @@
   "location": {
     "support": {
       "top_bar": {
-        "url": "http://localhost:3000/top_bar",
+        "url": "https://aa-agent-notes.web.app/top_bar.html",
         "size": {
           "height": "60vh",
           "width": "400px"
         }
       },
       "ticket_sidebar": {
-        "url": "http://localhost:3000/ticket_sidebar",
+        "url": "https://aa-agent-notes.web.app/ticket_sidebar.html",
         "size": {
           "height": "70vh",
           "width": "100%"
         }
       },
       "new_ticket_sidebar": {
-        "url": "http://localhost:3000/ticket_sidebar",
+        "url": "https://aa-agent-notes.web.app/ticket_sidebar.html",
         "size": {
           "height": "70vh",
           "width": "100%"
