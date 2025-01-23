@@ -2,7 +2,8 @@
   "name": "Agent Notes",
   "author": {
     "name": "Assist Apps",
-    "email": "hello@assistapps.co"
+    "email": "hello@assistapps.co",
+    "url": "https://getassist.co"
   },
   "defaultLocale": "en",
   "private": false,
