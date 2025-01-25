@@ -4,6 +4,10 @@ import { Box, Flex, IconButton } from '@chakra-ui/react'
 import { RiAddLine, RiSearchLine } from 'react-icons/ri'
 import { useNotes } from '@/app/hooks/useNotes'
 import { useSearch } from '../hooks/useSearch'
+<<<<<<< HEAD
+=======
+import { BLANK_NOTE } from '../utils/constants'
+>>>>>>> review-3
 
 const Toolbar = () => {
   const { addNote } = useNotes()
@@ -14,7 +18,13 @@ const Toolbar = () => {
     setSearchActive(false)
   }
 
+<<<<<<< HEAD
   const handleAdd = () => addNote()
+=======
+  const handleAdd = () => {
+    addNote(BLANK_NOTE)
+  }
+>>>>>>> review-3
 
   const handleSearch = (value: string) => setSearchString(value)
 
@@ -28,7 +38,11 @@ const Toolbar = () => {
       <Flex gap='4' alignItems='center' justifyContent='space-betwen' w='100%' position='sticky'>
         
         <Box marginEnd='auto'>
+<<<<<<< HEAD
           <IconButton size='sm' onClick={handleAdd} variant='ghost' bg='transparent' >
+=======
+          <IconButton size='sm' onClick={handleAdd} variant='ghost' bg='transparent'>
+>>>>>>> review-3
             <RiAddLine />
           </IconButton>
         </Box>

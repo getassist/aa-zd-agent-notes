@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import {
   DialogBody,
   DialogContent,
@@ -10,6 +10,7 @@ import {
 import { DialogType } from '../types/appTypes'
 import { Button } from '@/components/ui/button'
 const ConfirmDialog = ({isOpen, onClose, onConfirm, title, content}: DialogType) => {
+  const initialFocusRef = useRef<HTMLButtonElement>(null)
 
   const handleConfirm = () => {
     if (onConfirm) onConfirm()
@@ -23,7 +24,7 @@ const ConfirmDialog = ({isOpen, onClose, onConfirm, title, content}: DialogType)
         </DialogHeader>
         <DialogFooter>
           <Button onClick={onClose} variant='ghost'>Cancel</Button>
-          <Button onClick={handleConfirm}>Yes</Button>
+          <Button ref={initialFocusRef} onClick={handleConfirm}>Yes</Button>
         </DialogFooter>
       </DialogContent>
     </DialogRoot>

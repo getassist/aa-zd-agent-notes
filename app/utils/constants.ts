@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Note } from '../types/appTypes'
 
 export const BLANK_NOTE: Omit<Note, 'id'> = {
@@ -6,6 +7,9 @@ export const BLANK_NOTE: Omit<Note, 'id'> = {
   open: true,
   order: 1,
 }
+=======
+import { NewNote, NoteColor } from '../types/appTypes'
+>>>>>>> review-3
 
 export const COLOR_OPTIONS = {
   gray: '#f8f9f9',
@@ -15,6 +19,7 @@ export const COLOR_OPTIONS = {
   yellow: '#fff7d4',
 }
 
+<<<<<<< HEAD
 export const DEFAULT_COLOR = 'gray'
 
 // NEED TO UPDATE NAMES OF ALL CONTSANTS BELOW
@@ -50,3 +55,18 @@ export const TEST_NOTES: Note[] = [
     content: 'Enforcing ISO Format, If you need runtime validation to ensure the string is in a valid ISO 8601 format, you can use a utility function.'
   }
 ]
+=======
+export const BLANK_EDITOR_CONTENT = '<p></p>'
+
+export const DEFAULT_COLOR: NoteColor = 'gray'
+
+export const REGEX_URL = /(https?:\/\/[^\s]+)/g
+
+export const BLANK_NOTE: NewNote = {
+  color: DEFAULT_COLOR,
+  title: '',
+  content: '',
+  open: true,
+  order: 1,
+}
+>>>>>>> review-3

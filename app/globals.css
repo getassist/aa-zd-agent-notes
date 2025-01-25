@@ -28,3 +28,8 @@ em {
   border: none !important; /* Remove container border */
   box-shadow: none !important; /* Remove shadow */
 }
+
+.ql-editor a {
+  text-decoration: underline;
+  cursor: pointer;
+}

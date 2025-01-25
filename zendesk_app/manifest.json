@@ -7,6 +7,10 @@
   },
   "defaultLocale": "en",
   "private": false,
+<<<<<<< HEAD
+=======
+  "termsConditionsURL": "https://getassist.co/terms.html",
+>>>>>>> review-3
   "location": {
     "support": {
       "top_bar": {

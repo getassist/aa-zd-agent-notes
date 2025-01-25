@@ -83,6 +83,7 @@ const Database: DatabaseType = {
     return data
   },
 
+<<<<<<< HEAD
   // Database.createAccount = async (newAccount, newUser) => {
   //   const batch = writeBatch(db)
 
@@ -100,6 +101,8 @@ const Database: DatabaseType = {
   //   return collection(db, store)
   // },
 
+=======
+>>>>>>> review-3
   observe: (ref, observer) => {
     return onSnapshot(ref, observer)
   },
