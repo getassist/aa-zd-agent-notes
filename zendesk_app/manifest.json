@@ -1,0 +1,38 @@
+{
+  "name": "Agent Notes",
+  "author": {
+    "name": "Assist Apps",
+    "email": "hello@assistapps.co",
+    "url": "https://getassist.co"
+  },
+  "defaultLocale": "en",
+  "private": false,
+  "termsConditionsURL": "https://getassist.co/terms.html",
+  "location": {
+    "support": {
+      "top_bar": {
+        "url": "https://aa-agent-notes.web.app/top_bar.html",
+        "size": {
+          "height": "60vh",
+          "width": "400px"
+        }
+      },
+      "ticket_sidebar": {
+        "url": "https://aa-agent-notes.web.app/ticket_sidebar.html",
+        "size": {
+          "height": "70vh",
+          "width": "100%"
+        }
+      },
+      "new_ticket_sidebar": {
+        "url": "https://aa-agent-notes.web.app/ticket_sidebar.html",
+        "size": {
+          "height": "70vh",
+          "width": "100%"
+        }
+      }
+    }
+  },
+  "version": "1.0.2",
+  "frameworkVersion": "2.0"
+}
