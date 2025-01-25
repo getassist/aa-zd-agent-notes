@@ -20,11 +20,8 @@ export type Note = {
   updatedAt?: string,
 }
 
-<<<<<<< HEAD
-=======
 export type NewNote = Omit<Note, 'id'>
 
->>>>>>> review-3
 export type ZendeskUser = {
   id: number,
   name: string,
@@ -54,11 +51,7 @@ export type NoteColor = keyof typeof COLOR_OPTIONS
 
 export type NotesContextType = {
   notes: Note[],
-<<<<<<< HEAD
-  addNote: () => void,
-=======
   addNote: (note: NewNote) => void,
->>>>>>> review-3
   removeNote: (id: string) => void,
   updateNote: (id: string, note: Partial<Note>) => void,
   updateNoteOrder: (id: string, direction: 'up' | 'down') => void,

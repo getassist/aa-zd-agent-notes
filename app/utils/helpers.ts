@@ -98,12 +98,8 @@ export const getTextBeforeFirstNewline = (text: string): string => {
 
 export const removeHtmlTags = (input: string): string => {
   return input.replace(/<[^>]*>/g, '')
-<<<<<<< HEAD
-}
-=======
 }
 
 export const findFromArray = <T>(array: T[], key: keyof T, value: any): T|null => {
   return array.find((x) => x[key] === value) || null
 }
->>>>>>> review-3

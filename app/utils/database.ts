@@ -83,26 +83,6 @@ const Database: DatabaseType = {
     return data
   },
 
-<<<<<<< HEAD
-  // Database.createAccount = async (newAccount, newUser) => {
-  //   const batch = writeBatch(db)
-
-  //   const userRef = doc(db, 'users', newUser.id)
-  //   batch.set(userRef, newUser)
-
-  //   const accountRef = doc(db, 'accounts', newAccount.id)
-  //   batch.set(accountRef, newAccount)
-
-  //   return batch.commit()
-  // }
-
-  // getRef: (store, id) => {
-  //   if (id) return doc(db, store, id)
-  //   return collection(db, store)
-  // },
-
-=======
->>>>>>> review-3
   observe: (ref, observer) => {
     return onSnapshot(ref, observer)
   },
