@@ -1,0 +1,35 @@
+em {
+  font-style: italic;
+}
+
+.ql-container {
+  border: none !important; /* Remove the border around the editor */
+  box-shadow: none !important; /* Remove any shadow */
+}
+
+.ql-editor {
+  border: none !important; /* Remove border inside editor */
+  outline: none; /* Remove focus outline */
+  padding-top: 5 !important;
+}
+
+.custom-quill .ql-container {
+  border: none !important; /* Remove the border around the editor */
+  box-shadow: none !important; /* Remove any shadow */
+}
+
+.custom-quill .ql-editor {
+  border: none !important; /* Remove border inside editor */
+  outline: none; /* Remove focus outline */
+  padding-top: 0 !important;
+}
+
+.custom-quill {
+  border: none !important; /* Remove container border */
+  box-shadow: none !important; /* Remove shadow */
+}
+
+.ql-editor a {
+  text-decoration: underline;
+  cursor: pointer;
+}
