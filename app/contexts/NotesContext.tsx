@@ -1,6 +1,6 @@
 'use client'
 import React, { createContext, useEffect, useState } from 'react'
-import { NewNote, Note, NotesContextType, ProviderProps } from '../types/appTypes'
+import { NewNote, Note, NoteAssociation, NotesContextType, ProviderProps } from '../types/appTypes'
 import { findFromArray, isEqual, sortArray, uuid } from '../utils/helpers'
 import { useAuth } from '../hooks/useAuth'
 import Database from '../utils/database'
@@ -113,6 +113,11 @@ export const NotesContextProvider: React.FC<ProviderProps> = ({children}) => {
     return moveAndReorder(id, direction)
   }
 
+  const updateAssociations = (id: string, association: NoteAssociation, action: 'add' | 'remove') => {
+    if (action === 'remove') return Database.removeFromArray('notes', id, 'associations', association)
+    if (action === 'add') return Database.addToArray('notes', id, 'associations', association)
+  }
+
   useEffect(() => {
     const unsubscribe = async (snapshot: QuerySnapshot) => {
       const data: Note[] = []
@@ -130,7 +135,7 @@ export const NotesContextProvider: React.FC<ProviderProps> = ({children}) => {
   }, [appUser])
 
   return (
-    <NotesContext.Provider value={{ notes, addNote, removeNote, updateNote, updateNoteOrder }}>
+    <NotesContext.Provider value={{ notes, addNote, removeNote, updateNote, updateNoteOrder, updateAssociations }}>
       {children}
     </NotesContext.Provider>
   )

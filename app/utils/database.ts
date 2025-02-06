@@ -10,6 +10,8 @@ import {
   serverTimestamp,
   query,
   onSnapshot,
+  arrayRemove,
+  arrayUnion,
 } from 'firebase/firestore'
 import { db } from './firebase'
 import { uuid } from './helpers'
@@ -36,6 +38,25 @@ const Database: DatabaseType = {
     return docData
   },
 
+  removeFromArray: async (store, id, array, object) => {
+    if (!id) return false
+
+    const ref = doc(db, `${store}/${id}`)
+    return updateDoc(ref, {
+      updatedAt: serverTimestamp(),
+      [array]: arrayRemove(object)
+    })
+  },
+
+  addToArray: async (store, id, array, object) => {
+    if (!id) return false
+
+    const ref = doc(db, `${store}/${id}`)
+    return updateDoc(ref, {
+      updatedAt: serverTimestamp(),
+      [array]: arrayUnion(object)
+    })
+  },
 
   get: async (store, id) => {
     const ref = doc(db, store, id)

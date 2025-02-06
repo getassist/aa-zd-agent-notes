@@ -96,6 +96,10 @@ export const getTextBeforeFirstNewline = (text: string): string => {
   return newlineIndex !== -1 ? text.substring(0, newlineIndex) : text
 }
 
+export const getTextBeforeFirstSpace = (text: string): string => {
+  return text.split(' ')[0] || ''
+}
+
 export const removeHtmlTags = (input: string): string => {
   return input.replace(/<[^>]*>/g, '')
 }

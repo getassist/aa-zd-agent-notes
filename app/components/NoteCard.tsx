@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Note } from '@/app/types/appTypes'
 import { Box, Collapsible, IconButton, Text, AbsoluteCenter, Show } from '@chakra-ui/react'
-import { RiArrowDownWideLine, RiArrowUpWideLine } from 'react-icons/ri'
+import { RiArrowDownWideLine, RiArrowUpWideLine, RiCalendarCheckFill } from 'react-icons/ri'
 import { ClipboardRoot, ClipboardIconButton} from '@/components/ui/clipboard'
 import 'quill/dist/quill.snow.css'
 import { useNotes } from '@/app/hooks/useNotes'
@@ -9,11 +9,12 @@ import NoteMenu from './NoteMenu'
 import { BLANK_EDITOR_CONTENT, COLOR_OPTIONS, DEFAULT_COLOR } from '../utils/constants'
 import useEditor from '../hooks/useEditor'
 import { getTextBeforeFirstNewline } from '../utils/helpers'
+import NoteFooter from './NoteFooter'
+import { formatRelative } from 'date-fns'
 
-const NoteCard = (props: {note: Note}) => {
+const NoteCard = ({note}: {note: Note}) => {
   const {updateNote} = useNotes()
-  const {id, title, content, open, color} = props.note
-
+  const {id, title, content, open, color, createdAt} = note
   const {quill, quillRef, isEditing} = useEditor({toolbar: false})
 
   useEffect(() => {
@@ -48,28 +49,34 @@ const NoteCard = (props: {note: Note}) => {
 
   return (
       <Box bg={COLOR_OPTIONS[color || DEFAULT_COLOR]} >
-        <Collapsible.Root open={open} onOpenChange={handleShow} paddingTop={2} paddingBottom={2}>
+        <Collapsible.Root open={open} onOpenChange={handleShow}>
 
-          <Box position={'relative'}>
-            <AbsoluteCenter axis="vertical">
-              <Show when={open}>
-                  <NoteMenu note={props.note} />
-              </Show>
-            </AbsoluteCenter>
-            
+          <Box position='relative' paddingY={2}>
             <Collapsible.Trigger>
-              <AbsoluteCenter axis="vertical">
-                <Text textStyle={'sm'} truncate marginLeft={3} cursor='pointer' maxW='250px'>{open ? '' : title}</Text>
+              <AbsoluteCenter axis='vertical'>
+                <Text textStyle={'sm'} truncate marginLeft={3} cursor='pointer' maxW='250px'>{open ? null : title}</Text>
               </AbsoluteCenter>
             </Collapsible.Trigger>
 
-            <AbsoluteCenter axis="vertical" insetEnd="0">
-              
+            <Show when={open}>
+              <AbsoluteCenter axis='vertical'>
+                <NoteMenu note={note} />
+              </AbsoluteCenter>
+
+              {createdAt && (
+                <AbsoluteCenter opacity='0.4'>
+                  <Text fontSize='xs' mr={2}><RiCalendarCheckFill /></Text>
+                  <Text fontSize='xs'>{formatRelative(createdAt.toDate(), new Date())}</Text>
+                </AbsoluteCenter>
+              )}
+            </Show>
+
+            <AbsoluteCenter axis='vertical' insetEnd='0'>
               <ClipboardRoot value={content}>
-                <ClipboardIconButton variant='ghost' bg='transparent'  />
+                <ClipboardIconButton variant='ghost' bg='transparent' size='xs' />
               </ClipboardRoot>
 
-              <IconButton size='sm' onClick={handleShow} variant='ghost' bg='transparent' >
+              <IconButton size='xs' onClick={handleShow} variant='ghost' bg='transparent'>
                 {open ? <RiArrowUpWideLine /> : <RiArrowDownWideLine />}
               </IconButton>
             </AbsoluteCenter>
@@ -77,9 +84,10 @@ const NoteCard = (props: {note: Note}) => {
 
           <Collapsible.Content>
             <div ref={quillRef} />
+            <NoteFooter note={note} />
           </Collapsible.Content>
-        </Collapsible.Root>
 
+        </Collapsible.Root>
       </Box>
   )
 }

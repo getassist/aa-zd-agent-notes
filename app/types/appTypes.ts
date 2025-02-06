@@ -1,9 +1,17 @@
 import { ReactNode } from 'react'
 import { COLOR_OPTIONS } from '../utils/constants'
+import { AppLocation, ObjectType } from './zendeskTypes'
+import { Timestamp } from 'firebase/firestore'
 
 export type ViewType = 'personal' | 'shared'
 
 export type ViewAction = 'edit' | 'delete' | 'export'
+
+export type NoteAssociation = {
+  object: ObjectType,
+  id: number,
+  label: string,
+}
 
 export type Note = {
   id: string,
@@ -14,10 +22,12 @@ export type Note = {
   color?: NoteColor,
   isLast?: boolean,
   isFirst?: boolean,
-  createdAt?: string,
+  createdAt?: Timestamp,
   createdBy?: string,
   updatedBy?: string,
-  updatedAt?: string,
+  updatedAt?: Timestamp,
+  associations?: NoteAssociation[],
+  pinned?: boolean,
 }
 
 export type NewNote = Omit<Note, 'id'>
@@ -55,6 +65,14 @@ export type NotesContextType = {
   removeNote: (id: string) => void,
   updateNote: (id: string, note: Partial<Note>) => void,
   updateNoteOrder: (id: string, direction: 'up' | 'down') => void,
+  updateAssociations: (id: string, association: NoteAssociation, action: 'add' | 'remove') => void,
+}
+
+export type LocationContextType = {
+  location?: AppLocation,
+  object?: ObjectType,
+  objectId?: number,
+  objectLabel?: string,
 }
 
 export type SearchContextType = {
@@ -84,3 +102,5 @@ export type DialogType = {
   onClose?: () => void
   onConfirm?: () => void
 }
+
+export type FilterType = 'linked' | 'pinned' | 'all'

@@ -5,9 +5,12 @@ import { RiAddLine, RiSearchLine } from 'react-icons/ri'
 import { useNotes } from '@/app/hooks/useNotes'
 import { useSearch } from '../hooks/useSearch'
 import { BLANK_NOTE } from '../utils/constants'
+import { useLocation } from '../hooks/useLocation'
+import { NewNote } from '../types/appTypes'
 
 const Toolbar = () => {
   const { addNote } = useNotes()
+  const {object, objectId, objectLabel} = useLocation()
   const {setSearchString, searchActive, setSearchActive} = useSearch()
 
   const cancelHandler = () => {
@@ -16,7 +19,17 @@ const Toolbar = () => {
   }
 
   const handleAdd = () => {
-    addNote(BLANK_NOTE)
+    const newNote: NewNote = {...BLANK_NOTE}
+
+    if (object && objectId && objectLabel) {
+      newNote.associations = [{
+        object,
+        id: objectId,
+        label: objectLabel,
+      }]
+    }
+
+    addNote(newNote)
   }
 
   const handleSearch = (value: string) => setSearchString(value)

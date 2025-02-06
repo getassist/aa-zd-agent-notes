@@ -11,21 +11,28 @@
   "location": {
     "support": {
       "top_bar": {
-        "url": "https://aa-agent-notes.web.app/top_bar.html",
+        "url": "https://aa-agent-notes.web.app",
         "size": {
           "height": "60vh",
           "width": "400px"
         }
       },
       "ticket_sidebar": {
-        "url": "https://aa-agent-notes.web.app/ticket_sidebar.html",
+        "url": "https://aa-agent-notes.web.app",
         "size": {
           "height": "70vh",
           "width": "100%"
         }
       },
-      "new_ticket_sidebar": {
-        "url": "https://aa-agent-notes.web.app/ticket_sidebar.html",
+      "user_sidebar": {
+        "url": "https://aa-agent-notes.web.app",
+        "size": {
+          "height": "70vh",
+          "width": "100%"
+        }
+      },
+      "organization_sidebar": {
+        "url": "https://aa-agent-notes.web.app",
         "size": {
           "height": "70vh",
           "width": "100%"
@@ -33,6 +40,6 @@
       }
     }
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "frameworkVersion": "2.0"
 }

@@ -6,6 +6,7 @@ import { Provider } from '@/components/ui/provider'
 import { NotesContextProvider } from './contexts/NotesContext'
 import { SearchContextProvider } from './contexts/SearchContext'
 import { AuthContextProvider } from './contexts/AuthContext'
+import { LocationContextProvider } from './contexts/LocationContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,13 +32,15 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Provider>
-          <AuthContextProvider>
-            <NotesContextProvider>
-              <SearchContextProvider>
-                {children}
-              </SearchContextProvider>
-            </NotesContextProvider>
-          </AuthContextProvider>
+          <LocationContextProvider>
+            <AuthContextProvider>
+              <NotesContextProvider>
+                <SearchContextProvider>
+                  {children}
+                </SearchContextProvider>
+              </NotesContextProvider>
+            </AuthContextProvider>
+          </LocationContextProvider>
         </Provider>
       </body>
     </html>

@@ -17,4 +17,6 @@ export type DatabaseType = {
   find: (store: string, field: string, value: any) => Promise<any[]>
   query: (store: string, conditions: DatabaseQuery[]) => Promise<any[]>
   observe: (ref: Query, observer: (snapshot: QuerySnapshot) => void) => void
+  removeFromArray: (store: string, id: string, array: string, object: any) => Promise<any>
+  addToArray: (store: string, id: string, array: string, object: any) => Promise<any>
 }

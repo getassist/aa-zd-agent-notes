@@ -2,30 +2,26 @@
 
 ### Description
 
-**Agent Notes** simplifies workflows by enabling agents to create, organize, and manage notes directly within Zendesk. With features like instant copying and color-coded notes, this app ensures agents can efficiently keep track of important details and stay organized. Available in the ticket sidebar and top bar, Agent Notes is always within reach.
+**Agent Notes** simplifies workflows by enabling agents to create, organize, and manage notes directly within Zendesk. With features like instant copying, color-coded notes, and the ability to link notes to tickets, users, and organizations, this app ensures agents can efficiently keep track of important details and stay organized.
 
 ### Key Features
 
 - **Quick Note Creation**: Easily create notes within tickets for faster documentation.
+- **Link Notes**: Associate notes with tickets, users, and organizations for better context.
 - **Instant Copying**: Copy note content with a single click for easy sharing and reuse.
-- **Color-Coded Notes**: Organize your notes with customizable color codes to highlight priorities.
-- **Accessible Anywhere**: Available in the ticket sidebar and top bar, ensuring quick access at any time.
-- **Seamless Integration**: Fully integrates into Zendesk, allowing agents to stay in their workflow.
+- **Color-Coded Notes**: Organize your notes with customizable colors to highlight priorities.
+- **Accessible Anywhere**: Available in the ticket sidebar, user sidebar, organization sidebar, and top bar, ensuring quick access at any time.
 - **Easy Management**: Edit, delete, or rearrange notes as needed, ensuring information is always up-to-date.
+- **Pin Important Notes**: Pin crucial notes for quick reference.
+- **Easy Switch Between Views**: Quickly toggle between pinned notes, linked notes, and all notes for efficient navigation.
 
 ### Benefits
 
 - **Enhanced Productivity**: Save time by instantly creating and copying notes without leaving Zendesk.
 - **Better Organization**: Use color coding to quickly identify and prioritize key information.
 - **Improved Collaboration**: Share notes effortlessly to ensure team members stay informed. (Coming soon!)
-- **Streamlined Workflows**: Reduce clutter and keep important details organized within tickets.
-- **Template Responses**: Create reusable template responses for tickets, saving time on repetitive tasks
-
-### How It Works
-
-1. **Install the App**: Quickly install Agent Notes from the Zendesk Marketplace.
-2. **Create Notes**: Add notes directly to tickets or access them from the top bar for a broader view.
-3. **Organize and Share**: Use color coding and instant copying to manage and share notes effortlessly.
+- **Streamlined Workflows**: Reduce clutter and keep important details organized within tickets, users and organizations.
+- **Template Responses**: Create reusable template responses for tickets, saving time on repetitive tasks.
 
 ### Installation
 

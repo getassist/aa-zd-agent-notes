@@ -1,4 +1,6 @@
-type AppLocation = 'ticket_sidebar' | 'new_ticket_sidebar' | 'organization_sidebar' | 'user_sidebar' | 'top_bar' | 'nav_bar' | 'modal' | 'ticket_editor' | 'background'
+export type AppLocation = 'ticket_sidebar' | 'new_ticket_sidebar' | 'organization_sidebar' | 'user_sidebar' | 'top_bar' | 'nav_bar' | 'modal' | 'ticket_editor' | 'background'
+
+export type ObjectType = 'user' | 'ticket' | 'organization'
 
 type ApiRequestType = 'GET' | 'POST' | 'PUT' | 'DELETE'
 
@@ -9,7 +11,9 @@ type ZAFContext = {
     subdomain: string
   },
   location: AppLocation,
-  ticketId?: number
+  ticketId?: number,
+  userId?: number,
+  organizationId?: number,
 }
 
 type ZAFMetadata = {
@@ -51,7 +55,7 @@ export type ZAFClient = {
   has: (path: string) => boolean,
   instance: (guid: string) => ZAFClient,
   set: (path: string) => Promise<any>,
-  invoke: (path: string | object, args?: any) => Promise<any>,
+  invoke: (path: string | object, ...args: any) => Promise<any>,
   request: (options: string | ZAFRequestOptions) => Promise<any>,
   context: () => Promise<ZAFContext>,
   metadata: () => Promise<ZAFMetadata>,
